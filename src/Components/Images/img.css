@@ -1,0 +1,17 @@
+.grd{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    color: rebeccapurple;
+    gap: 15px;
+    margin: 50px 100px;
+}
+
+.grd div{
+    height: 150px;
+    width: 150px;
+}
+
+img{
+    object-fit: cover;
+}
