@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Image_Name = () => {
+const Image_Name = (props) => {
     return (
-        <h1>Query image</h1>
+        <h1>{props.pic === 'nice'? ' ': props.pic} Pictures</h1>
     )
 }
 
