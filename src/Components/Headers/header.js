@@ -1,6 +1,9 @@
 import React, {useState} from 'react';
-import { FaSearch } from "react-icons/fa";
+import { FaSearch, FaHome } from "react-icons/fa";
+import {BrowserRouter, Route} from 'react-router-dom';
+
 import Image from '../Images/image';
+import QuickSearch from '../quick-search/quickSearch';
 import './header.css'
 
 const Header = () => {
@@ -8,13 +11,11 @@ const Header = () => {
 
     const search = (query) => {
         if(query === '' || query === ' '){
-            setQuery('nice');
+            setQuery(' ');
         }else{
           setQuery(query);
         }
     }
-
-    // console.log(query, 'query')
     return (
         <div>
            <h1>Image Gallery</h1>
@@ -23,7 +24,16 @@ const Header = () => {
                 <span><FaSearch /></span> 
            </div>
            
-           <Image srch={query}/>
+           <BrowserRouter>
+             <QuickSearch />
+             <Route path='/' exact render={() => (<Image name={query} title={query}/>)} />
+             <Route path='/mountain' render={() => (<Image name='mountain' title='Mountain'/>)} />
+             <Route path='/cats' render={() => (<Image name='cat' title='Cats'/>)} />
+             <Route path='/dogs' render={() => (<Image name='dog' title='Dogs'/>)}/>
+             <Route path='/sun' render={() => (<Image name='sun' title='Sun'/>)}/>
+             <Route path='/game' render={() => (<Image name='game' title='Game'/>)}/>
+           </BrowserRouter>
+           
         </div>
     )
 }

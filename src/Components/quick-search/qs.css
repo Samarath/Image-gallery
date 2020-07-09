@@ -1,0 +1,17 @@
+div ul{
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+}
+
+div ul li{
+    padding: 5px 10px;
+    background-color: rebeccapurple;
+    margin: 5px;
+    border-radius: 15px;
+}
+
+div ul li a{
+    text-decoration: none;
+    color:white;
+}
